@@ -61,7 +61,7 @@ esac
 # 3. 配置网络
 if [ "$count" -eq 1 ]; then
     # 单网口设备，DHCP模式
-    uci set network.lan.proto='dhcp'
+    uci set network.lan.proto='static'
     uci delete network.lan.ipaddr
     uci delete network.lan.netmask
     uci delete network.lan.gateway
@@ -72,7 +72,7 @@ elif [ "$count" -gt 1 ]; then
     # 配置WAN
     uci set network.wan=interface
     uci set network.wan.device="$wan_ifname"
-    uci set network.wan.proto='dhcp'
+    uci set network.wan.proto='static'
 
     # 配置WAN6
     uci set network.wan6=interface
