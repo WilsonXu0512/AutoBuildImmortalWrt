@@ -60,7 +60,7 @@ esac
 
 # 3. 配置网络
 if [ "$count" -eq 1 ]; then
-    # 单网口设备，DHCP模式
+    # 单网口设备，静态IP
     uci set network.lan.proto='static'
     uci delete network.lan.ipaddr
     uci delete network.lan.netmask
